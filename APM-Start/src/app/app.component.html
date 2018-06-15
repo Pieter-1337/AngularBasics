@@ -1,0 +1,18 @@
+<!--The whole content below can be removed with the new code.-->
+<div>
+  <nav class="nav navbar-default">
+    <div class='container-fluid'>
+      <p class='navbar-brand'>{{pageTitle}}</p>
+        <ul class='nav navbar-nav'>
+          <li><a [routerLink]="['/welcome']">Home</a></li>
+          <li><a [routerLink]="['/products']">Products</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="container" style="margin-top: 75px">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+
