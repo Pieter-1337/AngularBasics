@@ -1,5 +1,33 @@
-<div class='panel panel-primary' *ngIf='product'>
+<div class='panel panel-primary' style="position: relative; min-height: 500px" *ngIf='product' >
   <div class='panel-heading'>
     {{pageTitle + ': ' + product.productName}}
+  </div>
+  <div class="panel-body" style="margin-top: 50px; margin-bottom: 50px;">
+    <div class="container col-md-6">
+      <table style="margin-top: 50px;">
+        <dl style="font-size: 17px; float: left;">
+          <dt>Name: </dt>
+          <dt>Code: </dt>
+          <dt>Description: </dt>
+          <dt>Availabillity: </dt>
+          <dt>Price: </dt>
+          <dt item-width="100%" style="float: left;">Rating: </dt>
+        </dl>
+        <dl style="float: left; margin-left: 50px; font-size:17px">
+          <dt>{{product.productName}}</dt>
+          <dt>{{product.productCode}}</dt>
+          <dt>{{product.description}}</dt>
+          <dt>{{product.releaseDate}}</dt>
+          <dt>{{product.price | currency:'EUR':true:'1.2-2'}}</dt>
+          <dt><pm-star style="float: left; width: 150px"></pm-star></dt>
+        </dl>
+      </table>
+    </div>
+    <div class="container col-md-6" style="text-align: center;">
+          <img class='image-responsive' style="width: 250px; height:250px;" src='{{product.imageUrl}}'/>
+    </div>
+  </div>
+  <div class="panel-footer" style="position: absolute; float: left; bottom: 0; left: 0; width: 100%;" >
+    <a class="btn btn-default" style="width: 150px ;" (click)='onBack()'><i class="glyphicon glyphicon-chevron-left"></i>Back</a>
   </div>
 </div>
